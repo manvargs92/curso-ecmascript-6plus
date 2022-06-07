@@ -150,3 +150,40 @@ helloPromise()
     // .then(console.log("Hola"))
     .catch(error => console.log(error));
 
+// Classes
+class calculator {
+    // constructor, método para inicializar una clase
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+    sumar(valorA, valorB) {
+        this.valueA = valorA;
+        this.valueB = valorB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calcualdora = new calculator();
+console.log(calcualdora.sumar(2, 2));
+
+
+// MÓDULOS
+import { hello } from "./module";
+hello();
+
+
+// GENERADORES
+function* helloWorld() { // function* para indicar que se trata de un generador
+    if (true) {
+        yield "Hello "; // yield guarda el estado de forma interna
+    }
+    if (true) {
+        yield "World!!"
+    }
+}
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value); // .next() por cada paso del generador que se desee ejecutar
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
