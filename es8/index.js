@@ -23,24 +23,24 @@ console.log(string.padEnd(12, " -----"));
 console.log("food".padEnd(12, " -----"));
 
 // ASYNC AWAIT
-const hellowWorld = function () {
-    return new Promise(function (resolve, reject) {
+const hellowWorld = () => {
+    return new Promise((resolve, reject) => {
         (true) 
-        ? setTimeout(function () {
+        ? setTimeout(() => {
             resolve("Hello World");
         }, 3000)
         : reject(new Error("Test Error"));
     });
 };
 
-const helloAsync = async function () {
+const helloAsync = async () => {
     const hello = await hellowWorld();
     console.log(hello);
 };
 
 helloAsync();
 
-const anotherFunction = async function () {
+const anotherFunction = async () => {
     try {
         const hellow = await hellowWorld();
         console.log(hellow);
